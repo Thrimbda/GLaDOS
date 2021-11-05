@@ -418,9 +418,13 @@ object Main {
     |I love it too. There's just one small thing we need to take care of first.
   """.stripMargin.split("\n"))
 
+  def getRandomQuotes: String = {
+    val randomIndex = Random.nextInt(quotes.length)
+    quotes(randomIndex)
+  }
+
   def main(args: Array[String]): Unit = {
-    val lineNums: Int = quotes.length
-    val randLine: String = quotes(Random.between(0, lineNums))
-    println(randLine)
+    val quote = getRandomQuotes
+    println(quote)
   }
 }
